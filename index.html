@@ -122,10 +122,15 @@
     }
   ]
 }
-
-
-ReactDOM.render(
-        <div className="card">
+    
+    // Note that Component has capital C
+    class Card extends React.Component {
+        
+        render(){
+            
+            return(
+            
+                 <div className="card">
       <div className="photo">
         <img src="images/lama.jpg" alt="Photo"/>
       </div>
@@ -143,8 +148,15 @@ ReactDOM.render(
          </ul>
       </div>
      </div> 
-    
-    ,
+            
+            )
+            
+        }
+    }
+
+
+ReactDOM.render(   
+    <Card />,
     document.getElementById("app")
 );
 
