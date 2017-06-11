@@ -2,26 +2,22 @@ var person = {
   name: 'Lambda the Llama',
   location: 'Lima, Peru',
   occupation: {
-    title: 'looking everywhere for a good meal!',
+    title: 'Looking everywhere for a good meal!',
     employer: 'the people'
   },
   photo: 'images/lama.jpg',
   updates: [
     {
       platform: 'twitter',
-      status: 'I\'m happy, hope you\'re happy too!'
+      status: 'Found some sweet alfalfa'
     },
     {
       platform: 'twitter',
-      status: 'The better the singer\'s voice, the harder it is to hear what they\'re saying'
-    },
-    {
-      platform: 'twitter',
-      status: 'Fear makes the wolf look bigger'
+      status: 'Layin in the hay and chillin like a villain'
     },
     {
       platform: 'facebook',
-      status: 'If you\’re working on something that you think is going to get accomplished in this lifetime then you’re not thinking big enough'
+      status: 'I just spat on someone LOL!'
     }
   ]
 }
@@ -55,7 +51,7 @@ var person = {
                     <h1 className="name">{this.props.name}</h1>
                     <h2 className="location">{this.props.location}</h2>
                     <div className="occupation">
-                        <p>{this.props.occupation}</p>
+                        <p>{this.props.occupation.title}. I work for {this.props.occupation.employer}</p>
                     </div>
                 </div>
             
@@ -112,7 +108,7 @@ var person = {
             
                  <div className="card">
                     <Photo source={person.photo} />
-                    <Bio name={person.name} location={person.location} occupation={person.occupation.title} />
+                    <Bio name={person.name} location={person.location} occupation={person.occupation} />
                     <Updates updates={person.updates}/>
                 </div> 
             
