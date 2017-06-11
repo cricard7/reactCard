@@ -88,24 +88,7 @@
 
   <div id="app">
       
-     <div class="card">
-      <div class="photo">
-        <img src="images/lama.jpg" alt="Photo">
-      </div>
-      <div class="bio">
-        <h1 class="name">Lama the lama</h1>
-        <h2 class="location">Lima, Peru</h2>
-        <div class="occupation">
-          <p>Looking everywhere for a good meal</p>
-        </div>
-      </div>
-      <div class=updates>
-         <ul>
-           <li class="update">Updates</li>
-           <li class="update">Updates</li>
-         </ul>
-      </div>
-     </div> 
+ 
 
   </div>
 
@@ -141,7 +124,29 @@
 }
 
 
-
+ReactDOM.render(
+        <div className="card">
+      <div className="photo">
+        <img src="images/lama.jpg" alt="Photo"/>
+      </div>
+      <div className="bio">
+        <h1 className="name">Lama the lama</h1>
+        <h2 className="location">Lima, Peru</h2>
+        <div className="occupation">
+          <p>Looking everywhere for a good meal</p>
+        </div>
+      </div>
+      <div className="updates">
+         <ul>
+           <li className="update">Updates</li>
+           <li className="update">Updates</li>
+         </ul>
+      </div>
+     </div> 
+    
+    ,
+    document.getElementById("app")
+);
 
   </script>
 </html>
