@@ -38,7 +38,6 @@ var person = {
                     <img src={this.props.source} alt="Photo"/>
                 </div>
             
-            
             )
             
             
@@ -70,13 +69,33 @@ var person = {
     }
 
     class Updates extends React.Component {
+        
+        //updates function to loop through the updates array passed to this component.
+        //react website states that an index is required when using map to that react can track dynamic data that is added and removed.
+        //https://facebook.github.io/react/docs/lists-and-keys.html
+        updates(){
+            
+            return this.props.updates.map(function(update, index){
+                
+                return(
+                    <li className={"update " + update.platform} key={index}>
+                        {update.status}
+                    </li>
+                 )  
+            });
+            
+            
+            
+        }
+        
+        
+        
         render(){
             
             return(
                 <div className="updates">
                     <ul>
-                        <li className="update">Updates</li>
-                        <li className="update">Updates</li>
+                        {this.updates()}
                     </ul>
                 </div>
             )      
@@ -84,6 +103,7 @@ var person = {
     }
     
     // Note that Component has capital C
+    // the entire updates array is passed to Updates component. It is the components job to loop through the individual updates
     class Card extends React.Component {
         
         render(){
@@ -93,7 +113,7 @@ var person = {
                  <div className="card">
                     <Photo source={person.photo} />
                     <Bio name={person.name} location={person.location} occupation={person.occupation.title} />
-                    <Updates />
+                    <Updates updates={person.updates}/>
                 </div> 
             
             )      

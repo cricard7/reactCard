@@ -64,6 +64,22 @@ class Bio extends React.Component {
 }
 
 class Updates extends React.Component {
+
+    //updates function to loop through the updates array passed to this component.
+    //react website states that an index is required when using map to that react can track dynamic data that is added and removed.
+    //https://facebook.github.io/react/docs/lists-and-keys.html
+    updates() {
+
+        return this.props.updates.map(function (update, index) {
+
+            return React.createElement(
+                'li',
+                { className: "update " + update.platform, key: index },
+                update.status
+            );
+        });
+    }
+
     render() {
 
         return React.createElement(
@@ -72,22 +88,14 @@ class Updates extends React.Component {
             React.createElement(
                 'ul',
                 null,
-                React.createElement(
-                    'li',
-                    { className: 'update' },
-                    'Updates'
-                ),
-                React.createElement(
-                    'li',
-                    { className: 'update' },
-                    'Updates'
-                )
+                this.updates()
             )
         );
     }
 }
 
 // Note that Component has capital C
+// the entire updates array is passed to Updates component. It is the components job to loop through the individual updates
 class Card extends React.Component {
 
     render() {
@@ -97,7 +105,7 @@ class Card extends React.Component {
             { className: 'card' },
             React.createElement(Photo, { source: person.photo }),
             React.createElement(Bio, { name: person.name, location: person.location, occupation: person.occupation.title }),
-            React.createElement(Updates, null)
+            React.createElement(Updates, { updates: person.updates })
         );
     }
 }
