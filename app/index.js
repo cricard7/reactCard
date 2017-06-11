@@ -35,7 +35,7 @@ var person = {
             return(
             
                 <div className="photo">
-                    <img src="images/lama.jpg" alt="Photo"/>
+                    <img src={this.props.source} alt="Photo"/>
                 </div>
             
             
@@ -53,10 +53,10 @@ var person = {
             return(
             
                 <div className="bio">
-                    <h1 className="name">LaMa the lama</h1>
-                    <h2 className="location">Lima, Peru</h2>
+                    <h1 className="name">{this.props.name}</h1>
+                    <h2 className="location">{this.props.location}</h2>
                     <div className="occupation">
-                        <p>Looking everywhere for a good meal</p>
+                        <p>{this.props.occupation}</p>
                     </div>
                 </div>
             
@@ -91,16 +91,14 @@ var person = {
             return(
             
                  <div className="card">
-                    <Photo />
-                    <Bio />
+                    <Photo source={"images/lama.jpg"} />
+                    <Bio name={"Lamda the Lama"} location={"Lima, Peru"} occupation={"looking everywhere for a good meal!"} />
                     <Updates />
                 </div> 
             
-            )
-            
+            )      
         }
     }
-
 
 ReactDOM.render(   
     <Card />,
