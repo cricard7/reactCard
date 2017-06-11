@@ -1,11 +1,11 @@
 var person = {
-    name: 'Chris Castig',
-    location: 'Brooklyn, New York',
+    name: 'Lambda the Llama',
+    location: 'Lima, Peru',
     occupation: {
-        title: 'Protecting Freedom',
-        employer: '@onemonthedu'
+        title: 'looking everywhere for a good meal!',
+        employer: 'the people'
     },
-    photo: './images/chris-merica.png',
+    photo: 'images/lama.jpg',
     updates: [{
         platform: 'twitter',
         status: 'I\'m happy, hope you\'re happy too!'
@@ -95,8 +95,8 @@ class Card extends React.Component {
         return React.createElement(
             'div',
             { className: 'card' },
-            React.createElement(Photo, { source: "images/lama.jpg" }),
-            React.createElement(Bio, { name: "Lamda the Lama", location: "Lima, Peru", occupation: "looking everywhere for a good meal!" }),
+            React.createElement(Photo, { source: person.photo }),
+            React.createElement(Bio, { name: person.name, location: person.location, occupation: person.occupation.title }),
             React.createElement(Updates, null)
         );
     }
